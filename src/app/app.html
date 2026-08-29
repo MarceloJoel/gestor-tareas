@@ -1,0 +1,35 @@
+<main class="contenedor">
+  <!-- Interpolación -->
+  <h1>{{ title() }}</h1>
+
+  <!-- Pipe de fecha: fullDate -->
+  <p class="fecha">{{ today() | date: 'fullDate' }}</p>
+
+  <!-- Two-Way Data Binding con [(ngModel)] -->
+  <div class="formulario">
+    <input
+      type="text"
+      placeholder="Escribe una nueva tarea..."
+      [(ngModel)]="nuevaTarea"
+      (keyup.enter)="guardarTarea()"
+      name="nuevaTarea"
+    />
+    <!-- Evento (click) -->
+    <button type="button" (click)="guardarTarea()">Guardar</button>
+  </div>
+
+  <!-- Control de flujo moderno: @if -->
+  @if (tareas().length === 0) {
+    <p class="vacio">No hay tareas todavía. ¡Agrega la primera! 📝</p>
+  } @else {
+    <!-- Control de flujo moderno: @for -->
+    <ul class="lista-tareas">
+      @for (tarea of tareas(); track tarea + $index) {
+        <li>
+          <span>{{ tarea }}</span>
+          <button type="button" class="eliminar" (click)="eliminarTarea($index)">✕</button>
+        </li>
+      }
+    </ul>
+  }
+</main>
