@@ -1,7 +1,7 @@
 # Gestor de Tareas (Angular 22 + Docker)
 
-Aplicación creada para el reto "Gestor de Tareas Dockerizado". Todo el entorno
-(Node, Angular CLI, dependencias y servidor de desarrollo) vive dentro del
+Aplicación creada para el reto "Gestor de Tareas Dockerizado" del curso "Desarrollo de Ssistemas WEB". 
+Consiste que Todo el entorno (Node, Angular CLI, dependencias y servidor de desarrollo) vive dentro del
 contenedor Docker, por lo que **no necesitas instalar Angular ni Node en tu
 computadora**.
 
@@ -15,6 +15,14 @@ Desde la carpeta del proyecto:
 
 ```bash
 docker-compose up
+```
+
+```bash
+docker-compose logs
+```
+Terminar el servicio:
+```bash
+docker-compose down
 ```
 
 (La primera vez tardará un poco más porque descarga la imagen de Node e
